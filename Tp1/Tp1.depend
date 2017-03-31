@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1490987399 source:c:\users\agus\documents\tecnicatura en  programacion\tps lab entrega\tp1\funciones.c
+	"funciones.h"
+	<stdio.h>
+	<stdlib.h>
+	<conio.h>
+
+1490935516 c:\users\agus\documents\tecnicatura en  programacion\tps lab entrega\tp1\funciones.h
+
+1490987112 source:c:\users\agus\documents\tecnicatura en  programacion\tps lab entrega\tp1\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
