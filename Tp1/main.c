@@ -35,56 +35,54 @@ int main()
         switch(opcion)
         {
             case 1:
-                printf("\nIngrese 1er operando: ");
-                scanf("%d",&num1);
+                num1 = pedir_numero("\nIngrese 1er operando: ");
                 funcion_pausa();
                 break;
             case 2:
-                printf("\nIngrese 2do operando: ");
-                scanf("%d",&num2);
+                num2 = pedir_numero("\nIngrese 2do operando: ");
                 funcion_pausa();
                 break;
             case 3:
                 suma = funcion_suma(num1,num2);
-                printf("\nLa suma de %d + %d es = %d\n",num1,num2,suma);
+                printf("\nLa suma es %d + %d = %d\n",num1,num2,suma);
                 funcion_pausa();
                 break;
             case 4:
                 resta = funcion_resta(num1,num2);
-                printf("\nLa resta de %d - %d es = %d \n",num1,num2,resta);
+                printf("\nLa resta es %d - %d = %d \n",num1,num2,resta);
                 funcion_pausa();
                 break;
             case 5:
                 division = funcion_dividir(num1, num2);
-                if(num2==0)
+                if(validar_division(num1,num2)==0)
                 {
                     printf("\nImposible realizar division, no se puede dividir por 0\n");
                 }
                 else
                 {
-                    printf("\nLa division de %d / %d es = %.2f\n",num1,num2,division);
+                    printf("\nLa division es %d / %d = %.2f\n",num1,num2,division);
                 }
                 funcion_pausa();
                 break;
             case 6:
                 producto = funcion_multiplicar(num1, num2);
-                printf("\nLa multiplicacion de %d * %d es = %d\n", num1, num2, producto);
+                printf("\nLa multiplicacion es %d * %d = %d\n", num1, num2, producto);
                 funcion_pausa();
                 break;
             case 7:
-                if(num1<13 && num1>-13)
+                if(validar_factorial(num1)!=0)
                 {
                     factorialA = funcion_factorial(num1);
-                    printf("\nEl factorial de %d es = %d\n",num1, factorialA);
+                    printf("\nEl factorial es %d! = %d\n",num1, factorialA);
                 }
                 else
                 {
                     printf("\nImposible calcular factorial de %d en esta calculadora, numero muy grande\n",num1);
                 }
-                if(num2<13 && num2>-13)
+                if(validar_factorial(num2)!=0)
                 {
                     factorialB = funcion_factorial(num2);
-                    printf("\nEl factorial de %d es = %d\n", num2, factorialB);
+                    printf("\nEl factorial es %d! = %d\n", num2, factorialB);
                 }
                 else
                 {
@@ -94,37 +92,37 @@ int main()
                 break;
             case 8:
                 suma = funcion_suma(num1, num2);
+                printf("\nLa suma es %d + %d = %d\n",num1,num2,suma);
                 resta = funcion_resta(num1, num2);
+                printf("\nLa resta es %d - %d = %d \n",num1,num2,resta);
                 division = funcion_dividir(num1, num2);
-                producto = funcion_multiplicar(num1, num2);
-                printf("\nLa suma de %d + %d es = %d\n",num1,num2,suma);
-                printf("\nLa resta de %d - %d es = %d \n",num1,num2,resta);
-                if(num2==0)
+                if(validar_division(num1, num2)==0)
                 {
                     printf("\nImposible realizar division, no se puede dividir por 0\n");
                 }
                 else
                 {
-                    printf("\nLa division de %d / %d es = %.2f\n",num1,num2,division);
+                    printf("\nLa division es %d / %d = %.2f\n",num1,num2,division);
                 }
-                printf("\nLa multiplicacion de %d * %d es = %d\n", num1, num2, producto);
-                if(num1<13 && num1>-13)
+                producto = funcion_multiplicar(num1, num2);
+                printf("\nLa multiplicacion es %d * %d = %d\n", num1, num2, producto);
+                if(validar_factorial(num1)!=0)
                 {
                     factorialA = funcion_factorial(num1);
-                    printf("\nEl factorial de %d es = %d\n",num1, factorialA);
+                    printf("\nEl factorial es %d! = %d\n",num1, factorialA);
                 }
                 else
                 {
-                    printf("\nImposible calcular factorial de %d en esta calculadora, numero muy grande\n",num1);
+                    printf("\nImposible calcular factorial de %d en esta calculadora, numero con demasiados digitos\n",num1);
                 }
-                if(num2<13 && num2>-13)
+                if(validar_factorial(num2)!=0)
                 {
                     factorialB = funcion_factorial(num2);
-                    printf("\nEl factorial de %d es = %d\n", num2, factorialB);
+                    printf("\nEl factorial es %d! = %d\n", num2, factorialB);
                 }
                 else
                 {
-                    printf("\nImposible calcular factorial de %d en esta calculadora, numero muy grande\n", num2);
+                    printf("\nImposible calcular factorial de %d en esta calculadora, numero con demasiados digitos\n", num2);
                 }
                 funcion_pausa();
                 break;

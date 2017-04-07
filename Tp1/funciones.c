@@ -108,4 +108,55 @@ void funcion_pausa(void)
     printf("\nPulse tecla para volver al menu");
     getch();
 }
+/** \brief pide al usuario un texto para mostrar en pantalla e ingresar un numero
+ *
+ * \param numero a ingresar
+ * \return numero ingresado por el usuario
+ *
+ */
 
+int pedir_numero(char texto[])
+{
+    int numero;
+    printf("%s",texto);
+    scanf("%d",&numero);
+    return numero;
+}
+
+
+/** \brief solicita dos numeros al usuario y valida que no se divida por 0
+ *
+ * \param numero a validar
+ * \param numero a validar
+ * \return devuelve 0 si el segundo parametro es 0, devuelve 1 si es diferente de 0
+ *
+ */
+int validar_division(int x, int y)
+{
+	if(y==0)
+    {
+		return 0;
+    }
+    else
+    {
+    	return 1;
+	}
+}
+
+/** \brief solicita al usuario un numero y valida que este dentro del rango para realizar el factorial
+ *
+ * \param numero entero
+ * \return devuelve 0 si esta fuera del rango, devuelve 1 si esta dentro del rango
+ *
+ */
+int validar_factorial(int x)
+{
+    if(x<13 && x>-13)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
